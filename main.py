@@ -58,6 +58,9 @@ while True:
             # print("Known Face detected")
             # print(studentIds[matchIndex])
             y1, x2, y2, x1 = faceLoc
+            y1, x2, y2, x1 = y1*4, x2*4, y2*4, x1*4
+            bbox = 55 + x1, 162 + y1, x2-x1, y2-y1
+            imgBackground = cvzone.cornerRect(imgBackground, bbox, rt=0)
 
 
     cv2.imshow("Web cam background",imgBackground)
